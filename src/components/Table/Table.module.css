@@ -1,0 +1,28 @@
+table {
+    margin: 10px auto;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 14px;
+    background: white;
+    width: 70%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th {
+    font-weight: normal;
+    color: black;
+    border: 1px solid #ccc;
+    background: rgba(231, 231, 231, 0.5);
+    padding: 10px 8px;
+}
+
+td {
+    border: 1px solid #ccc;
+    padding: 9px 8px;
+    transition: .3s linear;
+}
+
+tr:hover td {
+    background: rgba(240, 240, 240, 0.3);
+    /* cursor: pointer; */
+}
