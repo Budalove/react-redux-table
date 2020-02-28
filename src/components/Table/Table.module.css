@@ -1,4 +1,4 @@
-table {
+.Table {
     margin: 10px auto;
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     font-size: 14px;
@@ -23,6 +23,11 @@ td {
 }
 
 tr:hover td {
+    background: rgba(240, 240, 240, 0.3);
+    /* cursor: pointer; */
+}
+
+tr:active td {
     background: rgba(240, 240, 240, 0.3);
     /* cursor: pointer; */
 }

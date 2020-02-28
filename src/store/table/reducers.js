@@ -2,14 +2,16 @@ import {
     FETCH_DATA_SUCCESS,
     FETCH_DATA_FAILURE,
     ADD_DATA_ROW,
-    GET_ITEM_BY_ID
+    GET_ITEM_BY_ID,
+    SELECT_SIZE_OF_DATA
 } from './actions';
 
 const initialState = {
     data: [],
     loading: true,
     error: null,
-    selectedItem: null
+    selectedItem: null,
+    url: null
 }
 
 const tableReducer = (state = initialState, action) => {
@@ -17,18 +19,16 @@ const tableReducer = (state = initialState, action) => {
     switch (action.type) {
         case FETCH_DATA_SUCCESS:
             return {
+                ...state,
                 loading: false,
-                error: null,
                 data: action.payload,
-                selectedItem: null
             };
 
         case FETCH_DATA_FAILURE:
             return {
+                ...state,
                 loading: false,
                 error: action.payload,
-                data: [],
-                selectedItem: null
             };
 
         case ADD_DATA_ROW:
@@ -45,6 +45,12 @@ const tableReducer = (state = initialState, action) => {
             return {
                 ...state,
                 selectedItem: item
+            };
+
+        case SELECT_SIZE_OF_DATA:
+            return {
+                ...state,
+                url: action.payload
             };
 
         default:

@@ -1,28 +1,23 @@
 import React, { useEffect } from 'react';
 import cls from './Table.module.css';
-import Service from '../../services';
 import LinkContainer from '../Link/LinkContainer';
 import { filters } from '../../store/filter/actions';
 import Loader from '../Loader/Loader';
+import ErrorIndicator from '../ErrorIndicator/ErrorIndicator';
 import { withRouter } from 'react-router-dom';
 
 
-const Table = ({data, loading, dataLoaded, dataError, history}) => {
+const Table = ({data, error, url, loading, fetchData, history}) => {
 
-    const service = new Service();
-    
     useEffect(() => {
-        service.getFetchSmallData()
-            .then(res => {
-                dataLoaded(res)
-            })
-            .catch(er => {
-                dataError(er);
-            });
-    }, []);
+        fetchData(url);
+    }, [fetchData, url]);
 
     if(loading) 
         return <Loader />
+
+    if(error)
+        return <ErrorIndicator />
     
     const renderBody = data.map((d, indx) => {
         return (
@@ -37,7 +32,7 @@ const Table = ({data, loading, dataLoaded, dataError, history}) => {
     });
 
     return (
-        <table>
+        <table className={cls.Table}>
             <thead>
                 <tr>
                     <LinkContainer name="id" filter={filters.SORT_BY_ID} />

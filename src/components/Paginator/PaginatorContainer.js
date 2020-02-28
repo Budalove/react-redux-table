@@ -3,10 +3,12 @@ import { increasePage, decreasePage } from '../../store/paginator/actions';
 import Paginator from './Paginator';
 
 
-const mapStateToProps = (state) => ({
-    currentPage: state.paginator.currentPage,
-    pageSize: state.paginator.pageSize,
-    totalItemsCount: state.table.data.length,
+const mapStateToProps = ({paginator: {currentPage, pageSize}, table: {data, loading, error}}) => ({
+    currentPage: currentPage,
+    pageSize: pageSize,
+    totalItemsCount: data.length,
+    loading: loading,
+    error: error
 });
 
 const mapDispatchToProps = {

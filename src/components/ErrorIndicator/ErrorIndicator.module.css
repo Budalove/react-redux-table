@@ -1,0 +1,10 @@
+.Error {
+    width: 100%;
+    text-align: center;
+    margin: 40px 0;
+    padding: 10px;
+    border: none;
+    background-color: rgba(245, 75, 75, 0.733);
+    color: white;
+    font-size: 20px;
+}

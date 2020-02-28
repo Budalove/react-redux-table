@@ -1,0 +1,13 @@
+.Link {
+    display: flex;
+    flex-direction: row;
+}
+
+.Link span {
+    padding-left: 4px;
+}
+
+.Link button {
+    border: 1px solid #ccc;
+    background-color:rgba(162, 224, 235, 0.5);
+}

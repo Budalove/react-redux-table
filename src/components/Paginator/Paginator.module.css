@@ -1,5 +1,45 @@
 .Paginator {
     margin: 0 auto;
-    max-width: 70%;
     width: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+.Paginator button {
+    width: 40px;
+    height: 30px;
+    font-size: 20px;
+    color: white;
+    background-color: rgba(143, 142, 142, 0.801);
+    border: none;
+    transition: all 0.3s;
+}
+
+.Paginator Button:hover {
+    background-color: white;
+    border: 2px solid rgba(143, 142, 142, 0.801);
+    color: rgba(143, 142, 142, 0.801);
+}
+
+.Paginator button:first-child:hover {
+    border-right: none;
+}
+
+.Paginator button:last-child:hover {
+    border-right: none;
+}
+
+.Paginator button:disabled {
+    border: none;
+    background-color: #ccc;
+}
+
+.Paginator button:disabled:hover {
+    border: none;
+    color: white;
+}
+
+.Paginator span {
+    font-size: 28px;
+    margin-left: 5px;
 }
